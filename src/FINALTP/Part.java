@@ -3,7 +3,7 @@ package FINALTP;
 public class Part {
      private String Name;
      private int timeofmanufacture;
-     public int getTimeofmanufacture(){
+     public int fab_time(){
          return  timeofmanufacture;
      }
      public void setTimeofmanufacture(int timeofmanufacture){

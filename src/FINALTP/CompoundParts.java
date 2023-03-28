@@ -1,26 +1,25 @@
 package FINALTP;
 
-import javax.lang.model.element.Name;
 import java.util.ArrayList;
 
-public class CompoundParts {
+public class CompoundParts extends Part{
     private String Name;
 
-    private  int timeofmanufacture;
+    private  int assemabletime;
 
     private ArrayList<Part> listofparts = new ArrayList<Part>();
 
     public void add(Part newpart){
         listofparts.add(newpart);
-        this.timeofmanufacture+=newpart.getTimeofmanufacture();
+        this.assemabletime +=newpart.fab_time();
     }
     public CompoundParts(String name){
         this.Name = name;
-        this.timeofmanufacture = 0;
+        this.assemabletime = 0;
     }
     public void displayParts(){
         for (int i = 0; i < this.listofparts.size(); i++) {
-            System.out.println("part Name"+this.listofparts.get(i).getName() +" Manufacture time:"+ this.listofparts.get(i).getTimeofmanufacture());
+            System.out.println("part Name"+this.listofparts.get(i).getName() +" Manufacture time:"+ this.listofparts.get(i).fab_time());
         }
     }
 
@@ -34,7 +33,8 @@ public class CompoundParts {
     }
 
 
-    public int getTimeofmanufacture() {
-        return timeofmanufacture;
+    @Override
+    public int fab_time() {
+        return assemabletime;
     }
 }
